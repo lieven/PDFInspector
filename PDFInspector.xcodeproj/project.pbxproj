@@ -7,26 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA7A8B4224AFB53400785DD6 /* PDFPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7A8B4124AFB53400785DD6 /* PDFPageView.swift */; };
+		CA7A8B4324AFB53400785DD6 /* PDFPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7A8B4124AFB53400785DD6 /* PDFPageView.swift */; };
+		CA7A8B4524AFB6D500785DD6 /* PDFDictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7A8B4424AFB6D500785DD6 /* PDFDictionaryView.swift */; };
+		CA7A8B4624AFB6D500785DD6 /* PDFDictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7A8B4424AFB6D500785DD6 /* PDFDictionaryView.swift */; };
 		CAB449C224AFA50B0036A202 /* PDFInspectorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB449AE24AFA5090036A202 /* PDFInspectorApp.swift */; };
 		CAB449C324AFA50B0036A202 /* PDFInspectorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB449AE24AFA5090036A202 /* PDFInspectorApp.swift */; };
 		CAB449C424AFA50B0036A202 /* PDFInspectorDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB449AF24AFA5090036A202 /* PDFInspectorDocument.swift */; };
 		CAB449C524AFA50B0036A202 /* PDFInspectorDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB449AF24AFA5090036A202 /* PDFInspectorDocument.swift */; };
-		CAB449C624AFA50B0036A202 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB449B024AFA5090036A202 /* ContentView.swift */; };
-		CAB449C724AFA50B0036A202 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB449B024AFA5090036A202 /* ContentView.swift */; };
+		CAB449C624AFA50B0036A202 /* PDFDocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB449B024AFA5090036A202 /* PDFDocumentView.swift */; };
+		CAB449C724AFA50B0036A202 /* PDFDocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB449B024AFA5090036A202 /* PDFDocumentView.swift */; };
 		CAB449C824AFA50B0036A202 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAB449B124AFA50B0036A202 /* Assets.xcassets */; };
 		CAB449C924AFA50B0036A202 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAB449B124AFA50B0036A202 /* Assets.xcassets */; };
+		CAB449F224AFAC4E0036A202 /* Flyer.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CAB449F124AFAC4E0036A202 /* Flyer.pdf */; };
+		CAB449F324AFAC4E0036A202 /* Flyer.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CAB449F124AFAC4E0036A202 /* Flyer.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA7A8B4124AFB53400785DD6 /* PDFPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFPageView.swift; sourceTree = "<group>"; };
+		CA7A8B4424AFB6D500785DD6 /* PDFDictionaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFDictionaryView.swift; sourceTree = "<group>"; tabWidth = 3; };
 		CAB449AE24AFA5090036A202 /* PDFInspectorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFInspectorApp.swift; sourceTree = "<group>"; };
 		CAB449AF24AFA5090036A202 /* PDFInspectorDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFInspectorDocument.swift; sourceTree = "<group>"; };
-		CAB449B024AFA5090036A202 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CAB449B024AFA5090036A202 /* PDFDocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFDocumentView.swift; sourceTree = "<group>"; };
 		CAB449B124AFA50B0036A202 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CAB449B624AFA50B0036A202 /* PDFInspector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PDFInspector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAB449B924AFA50B0036A202 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAB449BE24AFA50B0036A202 /* PDFInspector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PDFInspector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAB449C024AFA50B0036A202 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAB449C124AFA50B0036A202 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		CAB449F124AFAC4E0036A202 /* Flyer.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Flyer.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +62,7 @@
 				CAB449AD24AFA5090036A202 /* Shared */,
 				CAB449B824AFA50B0036A202 /* iOS */,
 				CAB449BF24AFA50B0036A202 /* macOS */,
+				CAB449D524AFABB00036A202 /* Preview Assets */,
 				CAB449B724AFA50B0036A202 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,8 +72,10 @@
 			children = (
 				CAB449AE24AFA5090036A202 /* PDFInspectorApp.swift */,
 				CAB449AF24AFA5090036A202 /* PDFInspectorDocument.swift */,
-				CAB449B024AFA5090036A202 /* ContentView.swift */,
+				CAB449B024AFA5090036A202 /* PDFDocumentView.swift */,
+				CA7A8B4124AFB53400785DD6 /* PDFPageView.swift */,
 				CAB449B124AFA50B0036A202 /* Assets.xcassets */,
+				CA7A8B4424AFB6D500785DD6 /* PDFDictionaryView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -92,6 +104,14 @@
 				CAB449C124AFA50B0036A202 /* macOS.entitlements */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		CAB449D524AFABB00036A202 /* Preview Assets */ = {
+			isa = PBXGroup;
+			children = (
+				CAB449F124AFAC4E0036A202 /* Flyer.pdf */,
+			);
+			path = "Preview Assets";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAB449C824AFA50B0036A202 /* Assets.xcassets in Resources */,
+				CAB449F224AFAC4E0036A202 /* Flyer.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAB449C924AFA50B0036A202 /* Assets.xcassets in Resources */,
+				CAB449F324AFAC4E0036A202 /* Flyer.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,9 +213,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA7A8B4524AFB6D500785DD6 /* PDFDictionaryView.swift in Sources */,
 				CAB449C224AFA50B0036A202 /* PDFInspectorApp.swift in Sources */,
 				CAB449C424AFA50B0036A202 /* PDFInspectorDocument.swift in Sources */,
-				CAB449C624AFA50B0036A202 /* ContentView.swift in Sources */,
+				CA7A8B4224AFB53400785DD6 /* PDFPageView.swift in Sources */,
+				CAB449C624AFA50B0036A202 /* PDFDocumentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,9 +225,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA7A8B4624AFB6D500785DD6 /* PDFDictionaryView.swift in Sources */,
 				CAB449C324AFA50B0036A202 /* PDFInspectorApp.swift in Sources */,
 				CAB449C524AFA50B0036A202 /* PDFInspectorDocument.swift in Sources */,
-				CAB449C724AFA50B0036A202 /* ContentView.swift in Sources */,
+				CA7A8B4324AFB53400785DD6 /* PDFPageView.swift in Sources */,
+				CAB449C724AFA50B0036A202 /* PDFDocumentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +353,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "Preview\\ Assets";
 				DEVELOPMENT_TEAM = CWWS67CQ58;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -349,6 +376,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "Preview\\ Assets";
 				DEVELOPMENT_TEAM = CWWS67CQ58;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;

@@ -10,8 +10,8 @@ import SwiftUI
 @main
 struct PDFInspectorApp: App {
     var body: some Scene {
-        DocumentGroup(newDocument: PDFInspectorDocument()) { file in
-            ContentView(document: file.$document)
+        DocumentGroup(viewing: PDFInspectorDocument.self) { file in
+            PDFDocumentView(document: file.$document)
         }
     }
 }
