@@ -8,20 +8,27 @@
 import SwiftUI
 
 struct PDFPageView: View {
-	let page: CGPDFPage?
+	let document: CGPDFDocument
+	let pageIndex: Int
 	
-	init(document: CGPDFDocument, page: Int) {
-		self.page = document.page(at: page)
+	init(page: CGPDFDocument, pageIndex: Int) {
+		self.document = document
+		self.pageIndex = pageIndex
 	}
 
     var body: some View {
-        Text("Page \(page?.pageNumber ?? 0)")
+		VStack(alignment: .leading) {
+			PDFDictionaryView(document: document, page: pageIndex)
+    	}
+    	.navigationTitle("Page \(pageIndex)")
     }
 }
 
 struct PDFPageView_Previews: PreviewProvider {
     static var previews: some View {
-        PDFPageView(document: ContentView_Previews.testDocument.pdfDocument, page: 1)
+    	NavigationView {
+			PDFPageView(document: ContentView_Previews.testDocument.pdfDocument, page: 1)
+		}
     }
 }
 

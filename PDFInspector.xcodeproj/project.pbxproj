@@ -70,12 +70,12 @@
 		CAB449AD24AFA5090036A202 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				CAB449AE24AFA5090036A202 /* PDFInspectorApp.swift */,
-				CAB449AF24AFA5090036A202 /* PDFInspectorDocument.swift */,
-				CAB449B024AFA5090036A202 /* PDFDocumentView.swift */,
-				CA7A8B4124AFB53400785DD6 /* PDFPageView.swift */,
 				CAB449B124AFA50B0036A202 /* Assets.xcassets */,
 				CA7A8B4424AFB6D500785DD6 /* PDFDictionaryView.swift */,
+				CAB449B024AFA5090036A202 /* PDFDocumentView.swift */,
+				CAB449AE24AFA5090036A202 /* PDFInspectorApp.swift */,
+				CAB449AF24AFA5090036A202 /* PDFInspectorDocument.swift */,
+				CA7A8B4124AFB53400785DD6 /* PDFPageView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";

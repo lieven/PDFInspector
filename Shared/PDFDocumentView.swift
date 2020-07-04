@@ -11,14 +11,12 @@ struct PDFDocumentView: View {
     @Binding var document: PDFInspectorDocument
 
     var body: some View {
-		// FIXME NavigationView {
-			List(1..<document.pdfDocument.numberOfPages+1) { page in
-				NavigationLink(destination: PDFDictionaryView(document: document.pdfDocument, page: page)) {
-					Text("Page \(page)")
-				}
+		List(1..<document.pdfDocument.numberOfPages+1) { page in
+			NavigationLink(destination: PDFDictionaryView(document: document.pdfDocument, page: page)) {
+				Text("Page \(page)")
 			}
-		//	.navigationTitle(document.name ?? "test")
-		//}
+		}
+		.navigationTitle(document.name)
     }
 }
 
@@ -35,7 +33,9 @@ struct ContentView_Previews: PreviewProvider {
 	}
 
     static var previews: some View {
-    	return PDFDocumentView(document: .constant(ContentView_Previews.testDocument))
+    	NavigationView {
+    		PDFDocumentView(document: .constant(ContentView_Previews.testDocument))
+		}
     }
 }
 

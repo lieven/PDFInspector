@@ -8,54 +8,37 @@
 import SwiftUI
 
 struct PDFDictionaryView: View {
-	let dictionary: CGPDFDictionaryRef?
-	let keys: [String]
-	let values: [CGPDFDictionaryRef?]
+	let title: String
+	let dictionary: [String: PDFObject]
 	
-	init(dictionary: CGPDFDictionaryRef?) {
+	init(title: String, dictionary: [String: PDFObject]) {
+		self.title = title
 		self.dictionary = dictionary
-		
-		var keys = [String]()
-		var values = [CGPDFDictionaryRef?]()
-		if let dictionary = dictionary {
-			CGPDFDictionaryApplyBlock(dictionary, { (key, value, _) -> Bool in
-				keys.append(String(cString: key))
-				if case .dictionary = CGPDFObjectGetType(value) {
-					var valueDict: CGPDFDictionaryRef? = nil
-					if CGPDFObjectGetValue(value, .dictionary, &valueDict) {
-						values.append(valueDict)
-					} else {
-						values.append(nil)
-					}
-				} else {
-					values.append(nil)
-				}
-				return true
-			}, nil)
-		}
-		self.keys = keys
-		self.values = values
 	}
 	
-	init(document: CGPDFDocument, page: Int) {
-		self.init(dictionary: document.page(at: page)?.dictionary)
-	}
-
 	var body: some View {
-    	List(0..<keys.count) { index in
-    		NavigationLink(destination: PDFDictionaryView(dictionary: values[index])) {
-				 Text(keys[index])
+		List {
+			ForEach(dictionary.sorted(by: >), id: \.key) { key, value in
+				switch value {
+				case .dictionary(let dict):
+					return NavigationLink(destination: PDFDictionaryView(title: key, dictionary: dict)) {
+						Text(key)
+					}
+				default:
+					return Text(key)
+				}
 			}
 		}
-    }
+		//.navigationTitle(title)
+	}
 }
 
 struct PDFDictionaryView_Previews: PreviewProvider {
-	static var testDict: CGPDFDictionaryRef? {
-		return ContentView_Previews.testDocument.pdfDocument.page(at: 1)?.dictionary
+	static var testDict: [String: PDFObject]? {
+		return ContentView_Previews.testDocument.pageDict(at: 1)
 	}
-
-    static var previews: some View {
-        PDFDictionaryView(dictionary: testDict)
-    }
+	
+	static var previews: some View {
+		PDFDictionaryView(title: "Page 1 Dict", dictionary: testDict ?? [:])
+	}
 }
