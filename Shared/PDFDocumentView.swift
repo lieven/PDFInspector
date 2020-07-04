@@ -11,8 +11,8 @@ struct PDFDocumentView: View {
     @Binding var document: PDFInspectorDocument
 
     var body: some View {
-		List(1..<document.pdfDocument.numberOfPages+1) { page in
-			NavigationLink(destination: PDFDictionaryView(document: document.pdfDocument, page: page)) {
+		List(1..<document.numberOfPages+1) { page in
+			NavigationLink(destination: PDFPageView(document: document, pageIndex: page)) {
 				Text("Page \(page)")
 			}
 		}

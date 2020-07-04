@@ -130,6 +130,9 @@ extension CGPDFArrayRef {
 struct PDFInspectorDocument: FileDocument {
 	private let pdfDocument: CGPDFDocument
 	let name: String
+    var numberOfPages: Int {
+        return pdfDocument.numberOfPages
+    }
 	
     static var readableContentTypes: [UTType] { [.pdf] }
 
