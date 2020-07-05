@@ -54,29 +54,6 @@ struct PDFCollectionView: View {
     }
 }
 
-struct PDFValueCell: View {
-    let key: String
-    let value: String
-    let enabled: Bool
-    
-    init(key: String, value: String, enabled: Bool = true) {
-        self.key = key
-        self.value = value
-        self.enabled = enabled
-    }
-    
-    var body: some View {
-        HStack {
-            Text(key)
-            Spacer()
-            Text(value)
-                .foregroundColor(enabled ? Color.black : Color.gray)
-        }
-        .padding(EdgeInsets(top: 5.0, leading: 0.0, bottom: 5.0, trailing: 0.0))
-
-    }
-}
-
 
 struct PDFDictionaryView_Previews: PreviewProvider {
     static let testData: [(key: String, value: PDFObject)] = [

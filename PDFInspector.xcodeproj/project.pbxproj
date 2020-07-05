@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA443A0F24B1E6D500B15CBD /* PDFValueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA443A0E24B1E6D500B15CBD /* PDFValueCell.swift */; };
+		CA443A1024B1E6D500B15CBD /* PDFValueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA443A0E24B1E6D500B15CBD /* PDFValueCell.swift */; };
 		CA7A8B4224AFB53400785DD6 /* PDFPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7A8B4124AFB53400785DD6 /* PDFPageView.swift */; };
 		CA7A8B4324AFB53400785DD6 /* PDFPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7A8B4124AFB53400785DD6 /* PDFPageView.swift */; };
 		CA7A8B4524AFB6D500785DD6 /* PDFCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7A8B4424AFB6D500785DD6 /* PDFCollectionView.swift */; };
@@ -24,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA443A0E24B1E6D500B15CBD /* PDFValueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFValueCell.swift; sourceTree = "<group>"; };
 		CA7A8B4124AFB53400785DD6 /* PDFPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFPageView.swift; sourceTree = "<group>"; };
 		CA7A8B4424AFB6D500785DD6 /* PDFCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFCollectionView.swift; sourceTree = "<group>"; tabWidth = 3; };
 		CAB449AE24AFA5090036A202 /* PDFInspectorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFInspectorApp.swift; sourceTree = "<group>"; };
@@ -76,6 +79,7 @@
 				CAB449AE24AFA5090036A202 /* PDFInspectorApp.swift */,
 				CAB449AF24AFA5090036A202 /* PDFInspectorDocument.swift */,
 				CA7A8B4124AFB53400785DD6 /* PDFPageView.swift */,
+				CA443A0E24B1E6D500B15CBD /* PDFValueCell.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -213,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA443A0F24B1E6D500B15CBD /* PDFValueCell.swift in Sources */,
 				CA7A8B4524AFB6D500785DD6 /* PDFCollectionView.swift in Sources */,
 				CAB449C224AFA50B0036A202 /* PDFInspectorApp.swift in Sources */,
 				CAB449C424AFA50B0036A202 /* PDFInspectorDocument.swift in Sources */,
@@ -225,6 +230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA443A1024B1E6D500B15CBD /* PDFValueCell.swift in Sources */,
 				CA7A8B4624AFB6D500785DD6 /* PDFCollectionView.swift in Sources */,
 				CAB449C324AFA50B0036A202 /* PDFInspectorApp.swift in Sources */,
 				CAB449C524AFA50B0036A202 /* PDFInspectorDocument.swift in Sources */,
