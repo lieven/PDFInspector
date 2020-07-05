@@ -7,16 +7,21 @@
 
 import SwiftUI
 
-struct PDFDictionaryView: View {
+struct PDFCollectionView: View {
     let title: String
-    let dictionary: [String: PDFObject]
     let values: [(key: String, value: PDFObject)]
-        
-        
-    init(title: String, dictionary: [String: PDFObject]) {
+    
+    init(title: String, values: [(key: String, value: PDFObject)]) {
         self.title = title
-        self.dictionary = dictionary
-        self.values = dictionary.map({ $0 }).sorted { $0.key < $1.key }
+        self.values = values
+    }
+    
+    init(title: String, dictionary: CGPDFDictionaryRef?) {
+        self.init(title: title, values: dictionary?.dictionaryValues ?? [])
+    }
+    
+    init(title: String, array: CGPDFArrayRef?) {
+        self.init(title: title, values: array?.arrayValues ?? [])
     }
     
     var body: some View {
@@ -24,7 +29,7 @@ struct PDFDictionaryView: View {
             let (key, value) = values[index]
             switch value {
             case .dictionary(let dict):
-                NavigationLink(destination: PDFDictionaryView(title: key, dictionary: dict?.toDictionary ?? [:])) {
+                NavigationLink(destination: PDFCollectionView(title: key, dictionary: dict)) {
                     PDFValueCell(key: key, value: "Dictionary", enabled: false)
                 }
             case .string(let value), .name(let value):
@@ -37,10 +42,12 @@ struct PDFDictionaryView: View {
                 PDFValueCell(key: key, value: value ? "true" : "false")
             case .real(let value):
                 PDFValueCell(key: key, value: "\(value)")
-            case .array:
-                PDFValueCell(key: key, value: "FIXME: Array", enabled: false)
+            case .array(let array):
+                NavigationLink(destination: PDFCollectionView(title: key, array: array)) {
+                    PDFValueCell(key: key, value: "Array", enabled: false)
+                }
             case .stream:
-                PDFValueCell(key: key, value: "FIXME: Stream", enabled: false)
+                PDFValueCell(key: key, value: "Stream", enabled: false)
             }
         }
         .navigationTitle(title)
@@ -72,16 +79,16 @@ struct PDFValueCell: View {
 
 
 struct PDFDictionaryView_Previews: PreviewProvider {
-    static let testData: [String: PDFObject] = [
-        "String Key": .string("Value1"),
-        "Integer Key": .integer(1337),
-        "Null Key": .null,
-        "Dictionary Key": .dictionary(nil)
+    static let testData: [(key: String, value: PDFObject)] = [
+        (key: "String Key", value: .string("Value1")),
+        (key: "Integer Key", value: .integer(1337)),
+        (key: "Null Key", value: .null),
+        (key: "Dictionary Key", value: .dictionary(nil))
     ]
     
     static var previews: some View {
         NavigationView {
-            PDFDictionaryView(title: "Page 1 Dict", dictionary: testData)
+            PDFCollectionView(title: "Page 1 Dict", values: testData)
         }
     }
 }

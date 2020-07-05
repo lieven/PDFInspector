@@ -18,7 +18,7 @@ struct PDFPageView: View {
 
     var body: some View {
 		VStack(alignment: .leading) {
-			PDFDictionaryView(title: "Page \(pageIndex) Dict", dictionary: document.pageDict(at: pageIndex) ?? [:])
+			PDFCollectionView(title: "Page \(pageIndex) Dict", values: document.pageDict(at: pageIndex) ?? [])
     	}
     	.navigationTitle("Page \(pageIndex)")
     }

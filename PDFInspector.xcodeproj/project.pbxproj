@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		CA7A8B4224AFB53400785DD6 /* PDFPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7A8B4124AFB53400785DD6 /* PDFPageView.swift */; };
 		CA7A8B4324AFB53400785DD6 /* PDFPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7A8B4124AFB53400785DD6 /* PDFPageView.swift */; };
-		CA7A8B4524AFB6D500785DD6 /* PDFDictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7A8B4424AFB6D500785DD6 /* PDFDictionaryView.swift */; };
-		CA7A8B4624AFB6D500785DD6 /* PDFDictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7A8B4424AFB6D500785DD6 /* PDFDictionaryView.swift */; };
+		CA7A8B4524AFB6D500785DD6 /* PDFCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7A8B4424AFB6D500785DD6 /* PDFCollectionView.swift */; };
+		CA7A8B4624AFB6D500785DD6 /* PDFCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7A8B4424AFB6D500785DD6 /* PDFCollectionView.swift */; };
 		CAB449C224AFA50B0036A202 /* PDFInspectorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB449AE24AFA5090036A202 /* PDFInspectorApp.swift */; };
 		CAB449C324AFA50B0036A202 /* PDFInspectorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB449AE24AFA5090036A202 /* PDFInspectorApp.swift */; };
 		CAB449C424AFA50B0036A202 /* PDFInspectorDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB449AF24AFA5090036A202 /* PDFInspectorDocument.swift */; };
@@ -25,7 +25,7 @@
 
 /* Begin PBXFileReference section */
 		CA7A8B4124AFB53400785DD6 /* PDFPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFPageView.swift; sourceTree = "<group>"; };
-		CA7A8B4424AFB6D500785DD6 /* PDFDictionaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFDictionaryView.swift; sourceTree = "<group>"; tabWidth = 3; };
+		CA7A8B4424AFB6D500785DD6 /* PDFCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFCollectionView.swift; sourceTree = "<group>"; tabWidth = 3; };
 		CAB449AE24AFA5090036A202 /* PDFInspectorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFInspectorApp.swift; sourceTree = "<group>"; };
 		CAB449AF24AFA5090036A202 /* PDFInspectorDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFInspectorDocument.swift; sourceTree = "<group>"; };
 		CAB449B024AFA5090036A202 /* PDFDocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFDocumentView.swift; sourceTree = "<group>"; };
@@ -71,7 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				CAB449B124AFA50B0036A202 /* Assets.xcassets */,
-				CA7A8B4424AFB6D500785DD6 /* PDFDictionaryView.swift */,
+				CA7A8B4424AFB6D500785DD6 /* PDFCollectionView.swift */,
 				CAB449B024AFA5090036A202 /* PDFDocumentView.swift */,
 				CAB449AE24AFA5090036A202 /* PDFInspectorApp.swift */,
 				CAB449AF24AFA5090036A202 /* PDFInspectorDocument.swift */,
@@ -213,7 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA7A8B4524AFB6D500785DD6 /* PDFDictionaryView.swift in Sources */,
+				CA7A8B4524AFB6D500785DD6 /* PDFCollectionView.swift in Sources */,
 				CAB449C224AFA50B0036A202 /* PDFInspectorApp.swift in Sources */,
 				CAB449C424AFA50B0036A202 /* PDFInspectorDocument.swift in Sources */,
 				CA7A8B4224AFB53400785DD6 /* PDFPageView.swift in Sources */,
@@ -225,7 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA7A8B4624AFB6D500785DD6 /* PDFDictionaryView.swift in Sources */,
+				CA7A8B4624AFB6D500785DD6 /* PDFCollectionView.swift in Sources */,
 				CAB449C324AFA50B0036A202 /* PDFInspectorApp.swift in Sources */,
 				CAB449C524AFA50B0036A202 /* PDFInspectorDocument.swift in Sources */,
 				CA7A8B4324AFB53400785DD6 /* PDFPageView.swift in Sources */,
