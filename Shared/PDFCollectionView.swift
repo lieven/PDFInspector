@@ -16,12 +16,13 @@ struct PDFCollectionView: View {
         self.values = values
     }
     
-    init(title: String, dictionary: CGPDFDictionaryRef?) {
-        self.init(title: title, values: dictionary?.dictionaryValues ?? [])
+    init(title: String, dictionary: PDFDictionary) {
+        self.init(title: title, values: dictionary.values)
     }
     
-    init(title: String, array: CGPDFArrayRef?) {
-        self.init(title: title, values: array?.arrayValues ?? [])
+    init(title: String, array: PDFArray) {
+        let mapped = array.values.enumerated().map { return (key: "\($0)", value: $1) }
+        self.init(title: title, values: mapped)
     }
     
     var body: some View {
@@ -53,7 +54,7 @@ struct PDFDictionaryView_Previews: PreviewProvider {
         (key: "Double 1", value: .real(1.0)),
         (key: "Double 2", value: .real(1.337)),
         (key: "Null", value: .null),
-        (key: "Dictionary", value: .dictionary(nil))
+        (key: "Dictionary", value: .dictionary(PDFDictionary(nil)))
     ]
     
     static var previews: some View {
@@ -79,12 +80,9 @@ extension PDFObject {
         case .name(let value), .string(let value):
             return value
         case .array(let array):
-            return array.arrayPreview
+            return array.valuePreview
         case .dictionary(let dictionary):
-            guard dictionary != nil else {
-                return "Invalid Dictionary"
-            }
-            return "Dictionary"
+            return dictionary.valuePreview
         case .stream:
             return "Stream"
         }
@@ -100,19 +98,27 @@ extension PDFObject {
     }
 }
 
-extension Optional where Wrapped == CGPDFArrayRef {
-    var arrayPreview: String {
-        switch self {
-        case .none:
+extension PDFArray {
+    var valuePreview: String {
+        guard isValid else {
             return "Invalid Array"
-        case .some(let pdfArray):
-            let values = pdfArray.arrayValues
-            guard !values.contains(where: { $0.value.isComplex }) else {
-                return "Array"
-            }
-            
-            let valuePreviews = values.map { $0.value.valuePreview }
-            return "[\(valuePreviews.joined(separator: ", "))]"
         }
+        
+        let values = self.values
+        guard !values.contains(where: { $0.isComplex }) else {
+            return "Array"
+        }
+        
+        let valuePreviews = values.map { $0.valuePreview }
+        return "[\(valuePreviews.joined(separator: ", "))]"
+    }
+}
+
+extension PDFDictionary {
+    var valuePreview: String {
+        guard isValid else {
+            return "Invalid Dictionary"
+        }
+        return "Dictionary"
     }
 }

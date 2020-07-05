@@ -8,7 +8,6 @@
 import SwiftUI
 import UniformTypeIdentifiers
 
-
 enum PDFObject {
     case null
     case boolean(Bool)
@@ -16,8 +15,8 @@ enum PDFObject {
     case real(CGFloat)
     case name(String)
     case string(String)
-    case array(CGPDFArrayRef?)
-    case dictionary(CGPDFDictionaryRef?)
+    case array(PDFArray)
+    case dictionary(PDFDictionary)
     case stream(CGPDFStreamRef?)
     
     init?(_ object: CGPDFObjectRef) {
@@ -68,7 +67,7 @@ enum PDFObject {
             else {
                 return nil
             }
-            self = .array(value)
+            self = .array(PDFArray(value))
         case .dictionary:
             var value: CGPDFDictionaryRef?
             guard
@@ -76,7 +75,7 @@ enum PDFObject {
             else {
                 return nil
             }
-            self = .dictionary(value)
+            self = .dictionary(PDFDictionary(value))
         case .stream:
             var value: CGPDFStreamRef?
             guard
@@ -91,6 +90,59 @@ enum PDFObject {
         }
     }
 }
+
+
+class PDFArray {
+    private let arrayRef: CGPDFArrayRef?
+    
+    var isValid: Bool {
+        return arrayRef != nil
+    }
+    
+    lazy var values: [PDFObject] = {
+        var values = [PDFObject]()
+        if let arrayRef = arrayRef {
+            CGPDFArrayApplyBlock(arrayRef, { (index, pdfObject, nil) -> Bool in
+                if let object = PDFObject(pdfObject) {
+                    values.append(object)
+                }
+                return true
+            }, nil)
+        }
+        return values
+    }()
+    
+    init(_ arrayRef: CGPDFArrayRef?) {
+        self.arrayRef = arrayRef
+    }
+}
+
+
+class PDFDictionary {
+    private let dictionaryRef: CGPDFDictionaryRef?
+    
+    var isValid: Bool {
+        return dictionaryRef != nil
+    }
+    
+    lazy var values: [(key: String, value: PDFObject)] = {
+        var results = [(key: String, value: PDFObject)]()
+        if let dictionaryRef = dictionaryRef {
+            CGPDFDictionaryApplyBlock(dictionaryRef, { (key, value, _) -> Bool in
+                if let object = PDFObject(value) {
+                    results.append((key: String(cString: key), value: object))
+                }
+                return true
+            }, nil)
+        }
+        return results
+    }()
+    
+    init(_ dictionaryRef: CGPDFDictionaryRef?) {
+        self.dictionaryRef = dictionaryRef
+    }
+}
+
 
 extension CGPDFDictionaryRef {
     var dictionaryValues: [(key: String, value: PDFObject)] {
