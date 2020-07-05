@@ -17,7 +17,7 @@ enum PDFObject {
 	case name(String)
 	case string(String)
 	case array(CGPDFArrayRef)
-	case dictionary(CGPDFDictionaryRef)
+	case dictionary(CGPDFDictionaryRef?)
 	case stream(CGPDFStreamRef)
 	
 	init?(_ object: CGPDFObjectRef) {
